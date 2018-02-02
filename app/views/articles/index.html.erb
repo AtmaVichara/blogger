@@ -2,7 +2,7 @@
 
 <% @articles.each do |article| %>
   <h2><%= link_to article.title, article_path(article),
-          class: 'article-title', id: "article-#{article.id}" %></h2>
+          class: 'article-title'%></h2>
   <p><%= article.body %></p>
 <% end %>
 
