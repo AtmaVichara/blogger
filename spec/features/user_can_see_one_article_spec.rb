@@ -9,9 +9,8 @@ describe "user can see one article" do
 
       click_link article.title
 
-      expect(page).to have_content(article_1.title)
-      expect(page).to have_content(article_1.description)
-      expect(page).to have_link("Back to All Articles")
+      expect(page).to have_content(article.title)
+      expect(page).to have_content(article.body)
     end
   end
 end
