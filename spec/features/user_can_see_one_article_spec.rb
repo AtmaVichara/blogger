@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "user can see one article" do
   describe "they link from the articles index" do
     it "displays information for one article" do
-      article_1 = Article.create!(title: "Breaking News on Unauthorized Cashews", body: "A recent influx of unauthorized cashews has spawned a frenzy among the public and a crashing in the stocks of cashews. By god the horror")
+      article = Article.create!(title: "Breaking News on Unauthorized Cashews", body: "A recent influx of unauthorized cashews has spawned a frenzy among the public and a crashing in the stocks of cashews. By god the horror")
 
       visit articles_path
 
