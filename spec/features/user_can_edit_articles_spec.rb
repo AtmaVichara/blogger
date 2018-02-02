@@ -10,7 +10,7 @@ describe "user edits article" do
 
       fill_in "article[title]", with: "They Have Not Arrived..."
       fill_in "article[body]", with: "Our source just took too much of his microdose."
-      click_on "Edit Article"
+      click_on "Edit"
 
       expect(current_path).to eq(article_path(article))
       expect(page).to have_content("They Have Not Arrived...")
