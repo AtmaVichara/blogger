@@ -5,3 +5,5 @@
           class: 'article-title', id: "article-#{article.id}" %></h2>
   <p><%= article.body %></p>
 <% end %>
+
+<p><%= link_to "Create a New Article", new_article_path, class: 'new-article' %></p>
