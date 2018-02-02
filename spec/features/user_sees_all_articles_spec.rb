@@ -7,10 +7,11 @@ describe "user sees all articles" do
       article_2 = Article.create!(title: "All Cashews Deported", body: "With the recent influx of unauthorized cashews there has been a massive undertaking for deportations of said cashews. As of now many have been deported back to salads and pies.")
       visit '/articles'
 
-      expect(page).to have_content(article_1.title)
+      expect(page).to have_link(article_1.title)
       expect(page).to have_content(article_1.body)
-      expect(page).to have_content(article_2.title)
+      expect(page).to have_link(article_2.title)
       expect(page).to have_content(article_2.body)
+      expect(page).to have_link("Create a New Article")
     end
   end
 end
