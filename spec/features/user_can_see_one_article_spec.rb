@@ -18,6 +18,25 @@ describe "user can see one article" do
       expect(page).to have_content(comment1.body)
       expect(page).to have_content(comment2.author_name)
       expect(page).to have_content(comment2.body)
+      expect(page).to have_content("Comments (#{article.comments.size})")
+      expect(page).to have_content("Your Name")
+      expect(page).to have_content("Your Comment")
+    end
+  end
+
+  describe "they fill in comment form" do
+    it "displays comment on the article show" do
+      article = Article.create!(title: "Breaking News on Unauthorized Cashews", body: "A recent influx of unauthorized cashews has spawned a frenzy among the public and a crashing in the stocks of cashews. By god the horror")
+
+      visit article_path(article)
+
+      fill_in "comment[author_name]", with: "Grunkle Stan"
+      fill_in "comment[body]", with: "These are a menace on the community"
+      click_on "Submit"
+
+      expect(page).to have_content("Grunkle Stan")
+      expect(page).to have_content("These are a menace on the community")
+      expect(page).to have_content("New Comment Created")
     end
   end
 
