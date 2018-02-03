@@ -13,6 +13,7 @@ describe "user edits article" do
       click_on "Update Article"
 
       expect(current_path).to eq(article_path(article))
+      expect(page).to have_content("You Have Successfully Updated They Have Not Arrived...")
       expect(page).to have_content("They Have Not Arrived...")
       expect(page).to_not have_content("They Have Arrived!")
       expect(page).to have_content("Our source just took too much of his microdose.")
