@@ -29,7 +29,7 @@ describe "user can see one article" do
 
       fill_in "comment[author_name]", with: "Grunkle Stan"
       fill_in "comment[body]", with: "These are a menace on the community"
-      click_link "Submit"
+      click_on "Submit"
 
       expect(page).to have_content("Grunkle Stan")
       expect(page).to have_content("These are a menace on the community")
