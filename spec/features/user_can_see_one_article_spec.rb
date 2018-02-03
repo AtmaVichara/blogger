@@ -18,6 +18,9 @@ describe "user can see one article" do
       expect(page).to have_content(comment1.body)
       expect(page).to have_content(comment2.author_name)
       expect(page).to have_content(comment2.body)
+      expect(page).to have_content("Comments (#{article.comments.size})")
+      expect(page).to have_content("Your Name")
+      expect(page).to have_content("Your Comment")
     end
   end
 
