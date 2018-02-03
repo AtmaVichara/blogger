@@ -33,6 +33,7 @@ describe "user can see one article" do
 
       expect(page).to have_content("Grunkle Stan")
       expect(page).to have_content("These are a menace on the community")
+      expect(page).to have_content("New Comment Created")
     end
   end
 
