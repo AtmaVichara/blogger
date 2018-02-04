@@ -10,7 +10,7 @@ describe 'user deletes a tag' do
       visit tag_path(tag1)
       click_link "Delete"
 
-      expect(page).to have_content("You have Successfully Deleted the #{tag.name} tag")
+      expect(page).to have_content("You have Successfully Deleted the #{tag1.name} Tag!")
       expect(current_path).to eq(tags_path)
       expect(page).to_not have_link(tag1.name)
       expect(page).to have_link(tag2.name)
