@@ -10,7 +10,8 @@ describe 'user sees one tag' do
 
       click_link tag.name
 
-      expect(page).to have_content('Tag: Danger')
+      expect(page).to have_content('Articles Tagged with Danger')
+      expect(page).to have_link(article.title)
     end
   end
 end
