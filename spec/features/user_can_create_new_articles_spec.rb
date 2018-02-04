@@ -11,8 +11,10 @@ describe "user creates new articles" do
 
         fill_in "article[title]", with: "Unauthorized CASHEWS!!"
         fill_in "article[body]", with: "There are unauthorized cashews in the vacinity! Everyone be aware of these little monsters"
+        fill_in "article[tag_list]", with: "cashews, dangerous"
         click_on "Create Article"
 
+        expect(page).to have_content('cashews dangerous')
         expect(page).to have_content("You have Successfully Created Unauthorized CASHEWS!!")
         expect(page).to have_content("Unauthorized CASHEWS!!")
         expect(page).to have_content("There are unauthorized cashews in the vacinity! Everyone be aware of these little monsters")
