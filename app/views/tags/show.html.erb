@@ -1,4 +1,6 @@
 <h1>Articles Tagged with <%= @tag.name.capitalize %></h1>
+<p><%= link_to "Delete", tag_path(@tag), method: :delete,
+       data: {confirm: "Do you really wanna delete the tag?"}%></p>
 
 <p>
   <% @tag.articles.each do |article| %>
