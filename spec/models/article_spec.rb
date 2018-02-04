@@ -13,7 +13,7 @@ describe Article, type: :model do
         article.tags.create(name: "invasion")
         article.tags.create(name: "danger")
 
-        expect(article.tag_list).to eq("invasion, world danger")
+        expect(article.tag_list).to eq("invasion, danger")
       end
     end
   end
